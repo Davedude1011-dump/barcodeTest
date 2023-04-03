@@ -6,32 +6,6 @@
   </head>
   <body>
     <h1>Barcode Scanner</h1>
-    <video id="video" width="640" height="480" autoplay></video>
-    <button onclick="scanBarcode()">Scan Barcode</button>
-    <div id="output"></div>
-    
-    <script>
-      const video = document.getElementById('video');
-      const output = document.getElementById('output');
-      const scanner = new Instascan.Scanner({ video: video });
-      
-      Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
-          scanner.start(cameras[0]);
-        } else {
-          console.error('No cameras found.');
-        }
-      }).catch(function (e) {
-        console.error(e);
-      });
-      
-      function scanBarcode() {
-        scanner.scan(function (content) {
-          output.innerHTML = content;
-        });
-      }
-    </script>
-    
-    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <input type="file" name="image" accept="image/*" capture="environment">
   </body>
 </html>
