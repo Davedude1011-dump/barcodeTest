@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Barcode Scanner</title>
+    <title>Camera.js Example</title>
   </head>
   <body>
-    <h1>Barcode Scanner</h1>
-    <input type="file" name="image" accept="image/*" capture="environment">
+    <div id="camera-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/camerajs/dist/camera.min.js"></script>
+    <script>
+      // Get the camera container element
+      const cameraContainer = document.querySelector('#camera-container');
+
+      // Initialize the camera
+      const camera = new Camera(cameraContainer);
+
+      // Start the camera feed
+      camera.start();
+    </script>
   </body>
 </html>
